@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --orange_primary: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light_grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark_blue: hsl(213, 19%, 18%);
+  --very_dark_blue: hsl(216, 12%, 8%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Overpass, sans-serif;
+}
+
+h1, h2{
+  color: var(--white);
+}
+
+h3 {
+  color: var(--orange_primary);
+}
+
+p{
+  color: var(--light_grey);
+  line-height: 1.75em;
+}
+
+attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.attribution section{
+  text-align: center;
+}
+
+.vh-full {
+  background-color: var(--medium-grey);
+  height: 100vh;
+}
+
+.feedback {
+  background-color: var(--very_dark_blue);
+  border-radius: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+}
+
+.container-inner{
+  width: 90%;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--medium-grey);
+  background-color: var(--dark_blue);
+  cursor: pointer;
+}
+
+.circle:hover {
+  background-color: var(--orange_primary);
+  color: var(--white);
+}
+
+.submit-btn{
+  color: var(--white);
+  background-color: var(--orange_primary);
+  border: none;
+  width: 100%;
+  padding: 0.75em 0;
+  border-radius: 50px;
+  margin-top: 2em;
+  font-family: inherit;  
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+}
+
+.submit-btn:hover{
+  background-color: var(--white);
+  color: var(--orange_primary);
+}
+
+.no-pointer{
+  cursor: default;
+}
+
+.isHeld{
+  background-color: var(--light_grey);
+  color: var(--white);
+}
+
+.thank-you p{
+  text-align: center;
+  padding: 0;
+}
+
+.thank-you h3{
+  font-weight: normal;
+  padding: 0.5em 0.7em;
+  border-radius: 50px;
+  background-color: var(--dark_blue);
+  margin-top: 2em;
+}
+
+@media (min-width: 375px) {
+  .container-inner{
+    width: 80%;
+  }
+
+  .thank-you p {
+    padding: 0 1em;
+  }
+}
