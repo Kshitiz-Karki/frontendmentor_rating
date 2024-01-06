@@ -136,6 +136,10 @@ attribution {
   margin-top: 2em;
 }
 
+.radio-input{
+  visibility: hidden;
+}
+
 @media (min-width: 375px) {
   .container-inner{
     width: 80%;

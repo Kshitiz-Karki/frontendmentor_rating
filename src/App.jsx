@@ -22,12 +22,12 @@ function App() {
         ? { ...x, isHeld: !x.isHeld }
         : { ...x, isHeld: false }
     ))
+    const { value } = ratings.find(x => x.id === id)
+    setRating(value)
   }
 
   const handleSubmit = () => {
     setFeedbackSubmitted(true)
-    const { value } = ratings.find(x => x.isHeld)
-    setRating(value)
   }
 
   const ratingElements = ratings.map(rating => 
@@ -37,10 +37,10 @@ function App() {
       toggleIsheld={toggleIsheld}
   />)
 
+  console.log('rating - ', rating);
   return (
-    <>
       <div className="vh-full flex-center">
-        <div className="container feedback">
+        <main className="container feedback">
           <div className='container-inner'>
             {
               feedbackSubmitted
@@ -59,7 +59,7 @@ function App() {
                     <div className="circle flex-center no-pointer"> 
                       <img 
                         src={star} 
-                        alt="small orange star"
+                        alt=""
                       />
                     </div>
                     <h1>How did we do?</h1>
@@ -67,12 +67,18 @@ function App() {
                     <section className="flex-row">
                       {ratingElements}
                     </section>
-                    <button className='submit-btn' onClick={handleSubmit}>SUBMIT</button>
+                    <button 
+                      className='submit-btn' 
+                      onClick={handleSubmit}
+                      disabled={!rating}
+                    >
+                      SUBMIT
+                    </button>
                   </article>
             }
 
           </div>
-        </div>
+        </main>
         <div className="attribution container">
           <section>
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. 
@@ -80,7 +86,7 @@ function App() {
           </section>
         </div>
       </div>
-    </>
+    
   )
 }
 
